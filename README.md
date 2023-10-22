@@ -1,81 +1,27 @@
-# Job Posting Application
+# Job Listing Application
 
-This project comprises a Job Posting API built with Laravel and a React Native mobile app that interacts with the API. The backend is responsible for basic CRUD operations on job resources, while the frontend displays job listings, allows job creation, editing, and detailed viewing.
+## Goal
+Create an API for a simple job posting application and link it with a React Native app.
 
-## Getting Started
+## Part 1: Backend (Choose Go or Laravel)
+Choose either Go or Laravel for the backend. Set up a Job Posting API capable of basic CRUD operations for 'Job' resources. Endpoints should include listing all jobs, creating a new job, retrieving specific job details, updating a job posting, and deleting a job. Write tests for your endpoints.
 
-### Clone the Repository
+### Backend Setup (Laravel)
+1. Navigate to the `backend` folder.
+2. Run `composer install` to install required libraries.
+3. Run `php artisan serve` to start the server.
 
-```bash
-git clone <repository-url>
-Run the Application
-Backend (Laravel)
-Navigate to the Laravel project folder:
+## Part 2: React Native
+Create a mobile app using React Native as the frontend for the job posting application. Interface with the previously created Job Posting API. Display the list of all jobs, individual job details, and allow users to create and edit job postings.
 
-bash
-Copy code
-cd job-posting-api
-Run the Laravel development server:
+### Frontend Setup
+1. Navigate to the `job-listing-app` folder.
+2. Run `npm install` to install required libraries.
+3. Run `npx expo start` to run the application.
 
-bash
-Copy code
-php artisan serve
-Frontend (React Native)
-Navigate to the React Native project folder:
+### Additional Requirements
+Implement Redux for state management and error handling.
 
-bash
-Copy code
-cd JobPostingApp
-Install dependencies:
+## How to Run
+Follow the steps mentioned above for backend and frontend setups. Ensure both the backend server and React Native app are running simultaneously for full functionality.
 
-bash
-Copy code
-npm install
-Run the React Native application:
-
-bash
-Copy code
-npx react-native run-android  # For Android
-# or
-npx react-native run-ios      # For iOS
-Functionality
-Backend (Laravel)
-API Endpoints:
-
-GET /jobs: List all job postings.
-POST /jobs: Create a new job posting.
-GET /jobs/{id}: Retrieve details of a specific job posting.
-PUT /jobs/{id}: Update a specific job posting.
-DELETE /jobs/{id}: Delete a specific job posting.
-Job Structure:
-
-json
-Copy code
-{
-  "title": "Job Title",
-  "description": "Job Description",
-  "salary": "Job Salary",
-  "company": "Company Name",
-  "postedAt": "Date the job was posted"
-}
-Testing:
-Implemented PHPUnit tests for API endpoints.
-
-Frontend (React Native)
-Main Screens:
-
-List Screen: Displays all job postings.
-Detail Screen: Shows details of a specific job posting.
-Add Screen: Allows adding a new job posting.
-Edit Screen: Enables editing an existing job posting.
-Data Interaction:
-
-List Screen fetches data from GET /jobs.
-Detail Screen fetches data from GET /jobs/{id}.
-Add Screen posts data to POST /jobs.
-Edit Screen puts data to PUT /jobs/{id}.
-Data Synchronization:
-Changes made in add or edit screens reflect in the job listings.
-
-Error Handling:
-Displays appropriate error messages for user guidance.
